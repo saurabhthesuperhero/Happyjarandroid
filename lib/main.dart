@@ -25,7 +25,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,36 +75,76 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       context: context,
       builder: (BuildContext context) {
-        return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25), topRight: Radius.circular(25)),
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [
-                  0.4,
-                  1
-                ],
-                colors: [
-                  Color.fromRGBO(69, 182, 73, 1),
-                  Color.fromRGBO(46, 196, 182, 1)
-                ]),
-          ),
-          height: 500,
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              SizedBox(height: 80),
-              Text(
-                'What made you Happy today?',
-                style: GoogleFonts.alice(color: Colors.white, fontSize: 22),
+        return Stack(
+          alignment: Alignment.topCenter, // Center of Top
+          fit: StackFit.expand,
+
+          children: <Widget>[
+            Container(
+              child: Image.asset("assets/images/Smiley.png"),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25),
+                    topRight: Radius.circular(25)),
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: [
+                      0.4,
+                      1
+                    ],
+                    colors: [
+                      Color.fromRGBO(69, 182, 73, 1),
+                      Color.fromRGBO(46, 196, 182, 1)
+                    ]),
               ),
-              Image.asset("assets/images/Smiley.png"),
-              // SvgPicture.asset(assetName, semanticsLabel: 'Empty state'),
-            ],
-          ),
+              height: 500,
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  SizedBox(height: 80),
+                  Text(
+                    'What made you Happy today?',
+                    style: GoogleFonts.alice(color: Colors.white, fontSize: 22),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(40),
+                    child: TextField(
+                        controller: nameController,
+                        decoration: InputDecoration(
+                            hintText: 'I realize my worth..today',
+                            hintStyle: GoogleFonts.alice(color: Colors.white)),
+                        onChanged: (text) {
+                          setState(() {
+                            // fullName = text;
+                            //you can access nameController in its scope to get
+                            // the value of text entered as shown below
+                            //fullName = nameController.text;
+                          });
+                        }),
+                  ),
+                  RaisedButton(
+                    color: Color.fromRGBO(46, 196, 182, 1),
+                    textColor: Colors.white,
+                    child: Text('Put in Jar'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyHomePage()),
+                      );
+                    },
+                  ),
+                  // SvgPicture.asset(assetName, semanticsLabel: 'Empty state'),
+                ],
+              ),
+            ),
+          ],
         );
       },
     );
