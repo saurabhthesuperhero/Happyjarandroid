@@ -136,7 +136,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MyHomePage()),
+                        MaterialPageRoute(
+                            builder: (context) => FeelingScreen()),
                       );
                     },
                   ),
@@ -147,6 +148,191 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         );
       },
+    );
+  }
+}
+
+class FeelingScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color.fromRGBO(69, 182, 73, 1),
+                Color.fromRGBO(46, 196, 182, 1)
+              ]),
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                SizedBox(
+                  height: 100,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    new Align(
+                      alignment: Alignment.topLeft,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 26.0),
+                        child: Text(
+                          'How was the Overall Feeling?',
+                          style: GoogleFonts.alice(
+                            color: Colors.white,
+                            fontSize: 22,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Row(
+                  //Creates even space between each item and their parent container
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Image.asset("assets/images/blessemo.png"),
+                    Image.asset("assets/images/lovelyemo.png"),
+                    Image.asset("assets/images/proudemo.png"),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  //Creates even space between each item and their parent container
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Text(
+                      'Blessed',
+                      style: GoogleFonts.alice(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      'Loved',
+                      style: GoogleFonts.alice(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      'Proud',
+                      style: GoogleFonts.alice(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Row(
+                  //Creates even space between each item and their parent container
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Image.asset("assets/images/crazyemo.png"),
+                    Image.asset("assets/images/celebratemo.png"),
+                    Image.asset("assets/images/awesomeemo.png"),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  //Creates even space between each item and their parent container
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(
+                      'Crazy',
+                      style: GoogleFonts.alice(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      'Celebration',
+                      style: GoogleFonts.alice(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      'Awesome',
+                      style: GoogleFonts.alice(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Row(
+                  //Creates even space between each item and their parent container
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Image.asset("assets/images/funnyemo.png"),
+                    Image.asset("assets/images/nowordsemo.png"),
+                    Image.asset("assets/images/beautifulemo.png"),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  //Creates even space between each item and their parent container
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(
+                      'Funny',
+                      style: GoogleFonts.alice(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      'No words',
+                      style: GoogleFonts.alice(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      'Beautiful',
+                      style: GoogleFonts.alice(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 80,
+                ),
+              ]),
+        ),
+      ),
     );
   }
 }
