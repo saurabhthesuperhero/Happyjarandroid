@@ -47,7 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 Color.fromRGBO(46, 196, 182, 1)
               ]),
         ),
-        child: Stack(children: <Widget>[]),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -152,6 +151,59 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+class Jardone extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color.fromRGBO(69, 182, 73, 1),
+                Color.fromRGBO(46, 196, 182, 1)
+              ]),
+        ),
+        child: Center(
+          child: Column(
+              mainAxisAlignment:
+                  MainAxisAlignment.center //Center Column contents vertically,
+              ,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment
+                      .center, //Center Row contents horizontally,
+
+                  children: [
+                    Image.asset(
+                      "assets/images/jar.png",
+                      width: 200,
+                      height: 400,
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment
+                      .center, //Center Row contents horizontally,
+
+                  children: [
+                    Text(
+                      'Memory added Successfully',
+                      style: GoogleFonts.alice(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
+                    )
+                  ],
+                ),
+              ]),
+        ),
+      ),
+    );
+  }
+}
+
 class FeelingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -199,9 +251,33 @@ class FeelingScreen extends StatelessWidget {
                   //Creates even space between each item and their parent container
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    Image.asset("assets/images/blessemo.png"),
-                    Image.asset("assets/images/lovelyemo.png"),
-                    Image.asset("assets/images/proudemo.png"),
+                    GestureDetector(
+                      child: Image.asset("assets/images/blessemo.png"),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Jardone()),
+                        );
+                      },
+                    ),
+                    GestureDetector(
+                      child: Image.asset("assets/images/lovelyemo.png"),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Jardone()),
+                        );
+                      },
+                    ),
+                    GestureDetector(
+                      child: Image.asset("assets/images/proudemo.png"),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Jardone()),
+                        );
+                      },
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -244,9 +320,30 @@ class FeelingScreen extends StatelessWidget {
                   //Creates even space between each item and their parent container
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    Image.asset("assets/images/crazyemo.png"),
-                    Image.asset("assets/images/celebratemo.png"),
-                    Image.asset("assets/images/awesomeemo.png"),
+                    GestureDetector(
+                        child: Image.asset("assets/images/crazyemo.png"),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Jardone()),
+                          );
+                        }),
+                    GestureDetector(
+                        child: Image.asset("assets/images/celebratemo.png"),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Jardone()),
+                          );
+                        }),
+                    GestureDetector(
+                        child: Image.asset("assets/images/awesomeemo.png"),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Jardone()),
+                          );
+                        }),
                   ],
                 ),
                 SizedBox(
@@ -289,9 +386,30 @@ class FeelingScreen extends StatelessWidget {
                   //Creates even space between each item and their parent container
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    Image.asset("assets/images/funnyemo.png"),
-                    Image.asset("assets/images/nowordsemo.png"),
-                    Image.asset("assets/images/beautifulemo.png"),
+                    GestureDetector(
+                        child: Image.asset("assets/images/funnyemo.png"),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Jardone()),
+                          );
+                        }),
+                    GestureDetector(
+                        child: Image.asset("assets/images/nowordsemo.png"),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Jardone()),
+                          );
+                        }),
+                    GestureDetector(
+                        child: Image.asset("assets/images/beautifulemo.png"),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Jardone()),
+                          );
+                        }),
                   ],
                 ),
                 SizedBox(
